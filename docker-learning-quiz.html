@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Docker Learning Quiz</title>
+  <link rel="stylesheet" href="docker-learning-quiz.css">
+</head>
+<body>
+  <main class="app-shell">
+    <header class="hero">
+      <p class="eyebrow">INTERACTIVE PRACTICE</p>
+      <h1>Docker Learning Quiz</h1>
+      <p>Pick a topic, answer one question at a time, and build your Docker confidence.</p>
+    </header>
+
+    <section id="topic-picker" class="topic-picker" aria-labelledby="choose-topic">
+      <h2 id="choose-topic">Which section would you like to practise?</h2>
+      <div class="topic-grid">
+        <button class="topic-card" type="button" data-topic="images">
+          <span class="topic-icon" aria-hidden="true">▣</span>
+          <span>Docker Images</span>
+          <small>Layers, tags, history, save &amp; load</small>
+        </button>
+        <button class="topic-card" type="button" data-topic="containers">
+          <span class="topic-icon" aria-hidden="true">▤</span>
+          <span>Docker Containers</span>
+          <small>Run, stop, logs, exec &amp; lifecycle</small>
+        </button>
+      </div>
+    </section>
+
+    <section id="quiz" class="quiz hidden" aria-live="polite">
+      <div class="quiz-topline">
+        <button id="change-topic" class="text-button" type="button">← Change section</button>
+        <span id="progress" class="progress"></span>
+      </div>
+      <div class="quiz-card">
+        <p id="topic-label" class="eyebrow"></p>
+        <h2 id="question"></h2>
+        <label for="answer" class="answer-label">Your answer</label>
+        <textarea id="answer" rows="4" placeholder="Type your answer here…"></textarea>
+        <div class="actions">
+          <button id="check-answer" class="primary-button" type="button">Check answer</button>
+          <button id="next-question" class="secondary-button hidden" type="button">Next question →</button>
+        </div>
+        <div id="feedback" class="feedback hidden" role="status"></div>
+      </div>
+    </section>
+
+    <section id="complete" class="complete hidden" aria-live="polite">
+      <div class="quiz-card">
+        <p class="eyebrow">SECTION COMPLETE</p>
+        <h2>Nice work — you finished this set.</h2>
+        <p id="score-summary"></p>
+        <button id="choose-another" class="primary-button" type="button">Choose another section</button>
+      </div>
+    </section>
+  </main>
+  <script src="docker-learning-quiz.js"></script>
+</body>
+</html>
